@@ -1,0 +1,170 @@
+/* 
+* @Author: jack
+* @Date:   2015-05-20 19:03:34
+* @Last Modified by:   jack
+* @Last Modified time: 2015-06-07 18:25:35
+*/
+
+/*=====  common  =====*/
+.alt_overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-background-color: rgba(0, 0, 0, 0.5);/*现代浏览器下，作用相当于以下三行*/
+	background-color: #000;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+.alt_overlay_pure{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*======= alert ======*/
+.alt{
+	position: fixed;/*position: absolute;可选的定位方式*/
+	top: 25%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	font: 14px/1.2 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+	-display: none;
+}
+.alt .main_box{
+	position: relative;
+	background-color: #fff;
+	width: 300px;
+	margin-left: -151px;
+	border: 1px solid #666;
+	box-shadow: #000 0 0 15px;
+}
+.alt .close_btn{
+	position: absolute;
+	top: 0;
+	right: 5px;
+	font-family: 'Microsoft YaHei';
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+}
+.alt .close_btn:hover{
+	text-decoration: underline;
+}
+.alt .header{
+	height: 26px;
+	line-height: 26px;
+	font-size: 13px;
+	padding: 0 5px;
+	position: relative;
+	color: #fff;
+	background-color: #2B2F38;
+}
+.alt .container{
+	min-height: 54px;
+	padding: 5px;
+	line-height: 20px;
+}
+.alt .footer{
+	height: 30px;
+	line-height: 30px;
+	padding: 5px 5px;
+	font-size: 12px;
+}
+.alt .footer .mark{
+	color: #666;
+}
+.alt .footer .button{
+	text-align: center;
+}
+.alt .footer .button .btn{
+	background-color: #ddd;
+	border: 1px solid #333;
+	color: #333;
+	border-radius: 3px;
+	font: 12px/1.2 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+	padding: 2px 10px;
+	cursor: pointer;
+	margin: 0 5px;
+}
+.alt .footer .button input.btn{
+	*padding: 1px 5px;/*处理ie7下双内边距*/
+	*line-height: 1.0em;/*处理ie7下位置偏上*/
+}
+.alt .footer .button a.btn{
+	text-decoration: none;
+}
+.alt .footer .button .btn.sure{
+	color: #fff;
+	border-color: #C2303B;
+	background-color: #C2303B;
+}
+.alt .footer .button .btn.cancel{
+	color: #fff;
+	border-color: #837979;
+	background-color: #837979;
+}
+.alt .footer .button .btn.disabled{
+	color: #888;
+	border-color: #999;
+	background-color: #ddd;
+	cursor: not-allowed;
+	cursor: no-drop;
+}
+
+/*====== message ======*/
+.alt_message{
+	position: fixed;/*position: absolute;可选的定位方式*/
+	top: 40%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	font: 14px/1.2 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+	-display: none;
+}
+.alt_message .main_box{
+	position: relative;
+	width: 120px;
+	margin-left: -60px;
+	text-align: center;
+	white-space: normal;
+	word-break: break-all; /*支持IE，chrome，FF不支持*/
+	word-wrap: break-word;/*支持IE，chrome，FF*/
+}
+.alt_message .container{
+	background-color: #777;/*兼容rgba格式的浏览器*/
+	background-color: rgba(0, 0, 0, .5);
+	zoom: 1;
+	color: #fff;
+	border-radius: 8px;
+	padding: 5px 10px;
+}
+
+/*======  loading  ======*/
+.alt_loading{
+	position: fixed;/*position: absolute;可选的定位方式*/
+	top: 40%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	font: 14px/1.2 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+	-display: none;
+}
+.alt_loading .main_box{
+	position: relative;
+	width: 32px;
+	height: 32px;
+	margin-left: -16px;
+	margin-top: -16px;
+}
+.alt_loading .container{
+	background-color: #777;/*兼容rgba格式的浏览器*/
+	background-color: rgba(0, 0, 0, .5);
+	height: 100%;
+	background: url(loading.gif) no-repeat;
+}

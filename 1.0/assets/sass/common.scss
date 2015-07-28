@@ -1,0 +1,52 @@
+/* 页面变量来自skin */
+$g-w: 1000px;
+$m-pd: 15px;
+$m-mg: 15px;
+
+body{
+    background-color: $bd-bgc;
+    color: $bd-c;
+}
+
+/* 两列右侧自适应布局 */
+.g-bd{
+    width: 100%;
+    max-width: $g-w;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: $m-mg;
+    margin-bottom: $m-mg;
+}
+.g-sd{
+    position:relative;
+    float:left;
+    width:190px;
+    margin-right:-190px;
+    background-color: $sd-bgc;
+    color: $sd-c;
+}
+.g-mn{
+    float:right;
+    width:100%;
+}
+.g-mnc{
+    margin-left:200px;
+    background-color: $mnc-bgc;
+    color: $mnc-c;
+    box-shadow: 4px 3px 6px #333;
+}
+
+.m{
+    padding: $m-pd;
+}
+
+.u-code{
+    border: 1px solid $bdc;
+    background-color: #fff;
+    padding: $m-pd / 2;
+    color: #222;
+    font-size: 12px;
+    line-height: 20px;
+    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+    border-radius: $m-pd / 2;
+}
