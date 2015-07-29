@@ -1,29 +1,52 @@
-/* 页面变量来自skin */
-$g-w: 1000px;
-$m-pd: 15px;
-$m-mg: 15px;
+@import "reset";
+@import "function";
+@import "skin";
+@import "mixin";
 
+/* 全局变量 */
+$g-w: 1000px;  //主宽度
+$m-pd: 15px;  //模块的内边距
+$m-mg: 15px;  //模块间外的边距
+
+/* reset */
 body{
     background-color: $bd-bgc;
     color: $bd-c;
 }
 
+a{
+    color: $link-c;
+    transition: color .2s;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+/* 功能样式 */
+.f-mgb{  //用于与下面的块拉开下边距
+    margin-bottom: $m-mg / 2;
+}
+
+
 /* 两列右侧自适应布局 */
 .g-bd{
     width: 100%;
     max-width: $g-w;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: $m-mg;
-    margin-bottom: $m-mg;
+    margin: {
+        left: auto;
+        right: auto;
+        top: $m-mg;
+        bottom: $m-mg;
+    }
 }
 .g-sd{
     position:relative;
     float:left;
     width:190px;
     margin-right:-190px;
-    background-color: $sd-bgc;
-    color: $sd-c;
+    background-color: $g-sd-bgc;
+    color: $g-sd-c;
 }
 .g-mn{
     float:right;
@@ -31,18 +54,103 @@ body{
 }
 .g-mnc{
     margin-left:200px;
-    background-color: $mnc-bgc;
-    color: $mnc-c;
+    background-color: $g-mnc-bgc;
+    color: $g-mnc-c;
     box-shadow: 4px 3px 6px #333;
 }
 
-.m{
+/* 通用模块 */
+.m{  //模块基类
     padding: $m-pd;
 }
 
-.u-code{
+.m-nav{  //导航
+    @extend .m;
+    position: fixed;
+
+    .list{
+        li{
+            list-style: disc;
+            line-height: 24px;
+            margin-left: 15px;
+        }
+    }
+
+    .tiptop_outer{
+        position: relative;
+
+        &:hover{
+            .info{
+                display: block;
+            }
+        }
+
+        .info{
+            display: none;
+            position: absolute;
+            font-size: 12px;
+            line-height: 20px;
+            height: 20px;
+            left: 100%;
+            top: 50%;
+            padding: 0 10px;
+            margin: {
+                left: 15px;
+                top: -10px;
+            }
+            background-color: #555;
+            color: #fff;
+            border-radius: 5px;
+            white-space: nowrap;
+
+            @include prefix(animation, .2s ease-out fadeinR);
+
+            &:before{
+                content: "";
+                display: block;
+                position: absolute;
+                height: 0;
+                width: 0;
+                border: {
+                    top: 5px solid transparent;
+                    bottom: 5px solid transparent;
+                    left: 5px solid transparent;
+                    right: 6px solid #555;
+                }
+                left: 0;
+                top: 50%;
+                margin: {
+                    left: -10px;
+                    top: -5px;
+                }
+            }
+        }
+    }
+
+    @at-root {
+        /* 淡入-从右 */
+        @-webkit-keyframes fadeinR{
+            0%{opacity:0;-webkit-transform:translateX(20px);}
+            100%{opacity:1;-webkit-transform:translateX(0);}
+        }
+        @-moz-keyframes fadeinR{
+            0%{opacity:0;-moz-transform:translateX(20px);}
+            100%{opacity:1;-moz-transform:translateX(0);}
+        }
+        @-ms-keyframes fadeinR{
+            0%{opacity:0;-ms-transform:translateX(20px);}
+            100%{opacity:1;-ms-transform:translateX(0);}
+        }
+        @keyframes fadeinR{
+            0%{opacity:0;transform:translateX(20px);}
+            100%{opacity:1;transform:translateX(0);}
+        }
+    }
+}
+
+.u-code{  //代码块
     border: 1px solid $bdc;
-    background-color: #fff;
+    background-color: #fafafa;
     padding: $m-pd / 2;
     color: #222;
     font-size: 12px;

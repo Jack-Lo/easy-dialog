@@ -1,27 +1,11 @@
-@import url(reset.css);
-@import url(function.css);
-@import "skin";
 @import "common";
 
-.f-mb{
-    margin-bottom: $m-mg / 2;
-}
-
-.m-nav{
-    position: fixed;
-
-    .list{
-        li{
-            list-style: disc;
-            margin-left: 15px;
-        }
-    }
-}
-
 .m-cfg{
+    @extend .m;
     //
 }
 
 .m-access{
+    @extend .m;
     //
 }

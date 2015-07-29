@@ -8,19 +8,28 @@
 <body>
 <div class="g-bd f-cb">
     <div class="g-sd">
-<div class="m m-nav">
-    <h3>配置导航：</h3>
+<div class="m-nav">
+    <h3 class="f-mgb">配置导航：</h3>
     <ul class="list">
-        <li><a href="#id">id</a></li>
-        <li><a href="#skin">skin</a></li>
-        <li><a href="#boxTop">boxTop</a></li>
+        <li><span class="tiptop_outer">
+            <a class="target" href="#id">id</a>
+            <i class="info">弹窗id</i>
+        </span></li>
+        <li><span class="tiptop_outer">
+            <a class="target" href="#skin">skin</a>
+            <i class="info">皮肤</i>
+        </span></li>
+        <li><span class="tiptop_outer">
+            <a class="target" href="#boxTop">boxTop</a>
+            <i class="info">弹窗上边距</i>
+        </span></li>
     </ul>
 </div>
     </div>
     <div class="g-mn">
         <div class="g-mnc">
-<div class="m m-cfg">
-<h3 class="f-mb">配置项：</h3>
+<div class="m-cfg">
+<h3 class="f-mgb">配置项：</h3>
 <pre class="u-code">
 cfg = {  //整合配置项
     id: opt.id||null,//弹窗id
@@ -61,7 +70,7 @@ cfg = {  //整合配置项
 </pre>
 </div>
 
-<div class="m m-access">
+<div class="m-access">
     <input type="button" id="btn" value="弹窗" />
 </div>
 
@@ -87,4 +96,5 @@ var myAlt = new alt({
 });
 
 //myAlt.crt();
+//console.log(myAlt);
 </script>
