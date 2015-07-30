@@ -5,7 +5,7 @@
 
 /* 全局变量 */
 $g-w: 1000px;  //主宽度
-$m-pd: 15px;  //模块的内边距
+$m-pd: 25px;  //模块的内边距
 $m-mg: 15px;  //模块间外的边距
 
 /* reset */
@@ -45,7 +45,6 @@ a{
     float:left;
     width:190px;
     margin-right:-190px;
-    background-color: $g-sd-bgc;
     color: $g-sd-c;
 }
 .g-mn{
@@ -75,54 +74,53 @@ a{
             margin-left: 15px;
         }
     }
+}
 
-    .tiptop_outer{
-        position: relative;
+.u-tiptop{  //tiptop
+    position: relative;
 
-        &:hover{
-            .info{
-                display: block;
-            }
-        }
-
+    &:hover{
         .info{
-            display: none;
+            display: block;
+        }
+    }
+
+    .info{
+        display: none;
+        position: absolute;
+        font-size: 12px;
+        line-height: 20px;
+        left: 100%;
+        top: 50%;
+        padding: 0px 10px;
+        margin: {
+            left: 15px;
+            top: -10px;
+        }
+        background-color: #555;
+        color: #fff;
+        border-radius: 5px;
+        white-space: nowrap;
+
+        @include prefix(animation, .2s ease-out fadeinR);
+
+        &:before{
+            content: "";
+            display: block;
             position: absolute;
-            font-size: 12px;
-            line-height: 20px;
-            height: 20px;
-            left: 100%;
-            top: 50%;
-            padding: 0 10px;
-            margin: {
-                left: 15px;
-                top: -10px;
+            height: 0;
+            width: 0;
+            border: {
+                top: 5px solid transparent;
+                bottom: 5px solid transparent;
+                left: 5px solid transparent;
+                right: 6px solid #555;
             }
-            background-color: #555;
-            color: #fff;
-            border-radius: 5px;
-            white-space: nowrap;
-
-            @include prefix(animation, .2s ease-out fadeinR);
-
-            &:before{
-                content: "";
-                display: block;
-                position: absolute;
-                height: 0;
-                width: 0;
-                border: {
-                    top: 5px solid transparent;
-                    bottom: 5px solid transparent;
-                    left: 5px solid transparent;
-                    right: 6px solid #555;
-                }
-                left: 0;
-                top: 50%;
-                margin: {
-                    left: -10px;
-                    top: -5px;
-                }
+            left: 0;
+            top: 50%;
+            margin: {
+                left: -10px;
+                top: -5px;
             }
         }
     }
@@ -131,18 +129,22 @@ a{
         /* 淡入-从右 */
         @-webkit-keyframes fadeinR{
             0%{opacity:0;-webkit-transform:translateX(20px);}
+            70%{opacity:.7;-webkit-transform:translateX(-10px);}
             100%{opacity:1;-webkit-transform:translateX(0);}
         }
         @-moz-keyframes fadeinR{
             0%{opacity:0;-moz-transform:translateX(20px);}
+            70%{opacity:.7;-moz-transform:translateX(-5px);}
             100%{opacity:1;-moz-transform:translateX(0);}
         }
         @-ms-keyframes fadeinR{
             0%{opacity:0;-ms-transform:translateX(20px);}
+            70%{opacity:.7;-ms-transform:translateX(-5px);}
             100%{opacity:1;-ms-transform:translateX(0);}
         }
         @keyframes fadeinR{
             0%{opacity:0;transform:translateX(20px);}
+            70%{opacity:1;transform:translateX(-5px);}
             100%{opacity:1;transform:translateX(0);}
         }
     }

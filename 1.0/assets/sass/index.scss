@@ -2,10 +2,33 @@
 
 .m-cfg{
     @extend .m;
-    //
 }
 
 .m-access{
     @extend .m;
-    //
+}
+
+.m-intro{
+    @extend .m;
+
+    .list>li{
+        margin-bottom: $m-mg;
+    }
+
+    .hd{
+        padding-bottom: 5px;
+        font-size: 24px;
+
+        &:hover{
+            .tg{
+                visibility: visible;
+            }
+        }
+
+        .tg{
+            float: left;
+            margin-left: -22px;
+            visibility: hidden;
+        }
+    }
 }

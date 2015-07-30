@@ -2,7 +2,7 @@
 * @Author: jack
 * @Date:   2015-05-21 18:43:10
 * @Last Modified by:   jack
-* @Last Modified time: 2015-06-07 18:30:32
+* @Last Modified time: 2015-07-30 19:01:52
 */
 
 /*
@@ -127,6 +127,7 @@
 	}
 
 	var me = function (opt){
+		/*config*/
 		this.cfg = {  //整合配置项
 			id: opt.id||null,//弹窗id
 			skin: opt.skin,//皮肤
@@ -163,6 +164,7 @@
 			stayTime: opt.stayTime||1800,//message自动退出的时间
 			autoDestroy: opt.autoDestroy//是否自动销毁
 		};
+		/*--!config--*/
 		this.handlers = {};
 		switch(this.cfg.model){  //弹窗模式
 			case 'message':
