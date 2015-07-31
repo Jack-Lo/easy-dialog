@@ -4,15 +4,17 @@
     @extend .m;
 }
 
-.m-access{
-    @extend .m;
-}
-
 .m-intro{
     @extend .m;
 
     .list>li{
-        margin-bottom: $m-mg;
+        padding: $m-mg / 2 30px $m-mg;
+        border-radius: 5px;
+        transition: background-color .2s;
+
+        &:hover{
+            background-color: #f9f9f9;
+        }
     }
 
     .hd{
@@ -30,5 +32,13 @@
             margin-left: -22px;
             visibility: hidden;
         }
+    }
+}
+
+.m-demo{
+    @extend .m;
+
+    .u-btn{
+        margin-right: 10px;
     }
 }

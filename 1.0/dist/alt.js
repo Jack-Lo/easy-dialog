@@ -2,7 +2,7 @@
 * @Author: jack
 * @Date:   2015-05-21 18:43:10
 * @Last Modified by:   jack
-* @Last Modified time: 2015-07-30 19:01:52
+* @Last Modified time: 2015-07-31 15:12:26
 */
 
 /*
@@ -127,44 +127,44 @@
 	}
 
 	var me = function (opt){
-		/*config*/
 		this.cfg = {  //整合配置项
-			id: opt.id||null,//弹窗id
-			skin: opt.skin,//皮肤
+			/*>>>config<<<*/
+			id: opt.id||null,//弹窗id>>>
+			skin: opt.skin,//皮肤>>>
 
-			boxTop: opt.boxTop,//弹窗上边距
-			boxWidth: opt.boxWidth,//弹窗宽度
-			boxHeight: opt.boxHeight,//正文窗体高度
-			boxPosition: opt.boxPosition,//弹窗定位方式
+			boxTop: opt.boxTop,//弹窗上边距>>>
+			boxWidth: opt.boxWidth,//弹窗宽度>>>
+			boxHeight: opt.boxHeight,//正文窗体高度>>>
+			boxPosition: opt.boxPosition,//弹窗定位方式>>>
 
-			title: opt.title||'',//标题
-			closeBtn: typeof opt.closeBtn==='undefined'?true:opt.closeBtn,//是否显示关闭按钮
-			container: opt.container||document.body,//容器
-			content: opt.content||'',//窗体正文
-			footer: opt.footer||'',//自定义页脚内容
-			footerType: opt.footerType||'none',//'none|mark|button' 预定义的页脚类型
-			footerAlign: opt.footerAlign,//'left|center|right' 页脚对齐方式
+			title: opt.title||'',//标题>>>
+			closeBtn: typeof opt.closeBtn==='undefined'?true:opt.closeBtn,//是否显示关闭按钮>>>
+			container: opt.container||document.body,//容器>>>
+			content: opt.content||'',//窗体正文>>>
+			footer: opt.footer||'',//自定义页脚内容>>>
+			footerType: opt.footerType||'none',//'none|mark|button' 预定义的页脚类型>>>
+			footerAlign: opt.footerAlign,//'left|center|right' 页脚对齐方式>>>
 
-			mark: opt.mark||'备注: 无',//备注
+			mark: opt.mark||'备注: 无',//备注>>>
 
-			button: opt.button||'single',//'single|couple'|html 预定义按钮或自定义内容
-			btnType: opt.btnType||'input',//'input|a' 按钮元素(此功能暂不实现)
-			sureBtnHandler: opt.sureBtnHandler,//确定按钮回调
-			cancelBtnHandler: opt.cancelBtnHandler,//取消按钮回调
-			closeBtnHandler: opt.closeBtnHandler,//关闭按钮回调
+			button: opt.button||'single',//'single|couple'|html 预定义按钮或自定义内容>>>
+			btnType: opt.btnType||'input',//'input|a' 按钮元素(此功能暂不实现)>>>
+			sureBtnHandler: opt.sureBtnHandler,//确定按钮回调>>>
+			cancelBtnHandler: opt.cancelBtnHandler,//取消按钮回调>>>
+			closeBtnHandler: opt.closeBtnHandler,//关闭按钮回调>>>
 
-			model: opt.model||'dialog',//'dialog|message|loading' 弹窗类型
-			draggable: typeof opt.draggable==='undefined'?false:opt.draggable,//拖拽
-			showAnimation: opt.showAnimation,//弹窗动画
-			hideAnimation: opt.hideAnimation,//关闭动画
-			overlay: typeof opt.overlay==='undefined'?true:opt.overlay,//遮罩
-			overlayType: opt.overlayType,//'grey|pure' 遮罩类型
+			model: opt.model||'dialog',//'dialog|message|loading' 弹窗类型>>>
+			draggable: typeof opt.draggable==='undefined'?false:opt.draggable,//拖拽>>>
+			showAnimation: opt.showAnimation,//弹窗动画>>>
+			hideAnimation: opt.hideAnimation,//关闭动画>>>
+			overlay: typeof opt.overlay==='undefined'?true:opt.overlay,//遮罩>>>
+			overlayType: opt.overlayType,//'grey|pure' 遮罩类型>>>
 
-			//message only
-			stayTime: opt.stayTime||1800,//message自动退出的时间
-			autoDestroy: opt.autoDestroy//是否自动销毁
+			stayTime: opt.stayTime||1800,//message自动退出的时间>>>
+			autoDelete: opt.autoDelete//是否自动销毁>>>
+			/*>>>!config<<<*/
 		};
-		/*--!config--*/
+		
 		this.handlers = {};
 		switch(this.cfg.model){  //弹窗模式
 			case 'message':
@@ -213,6 +213,9 @@
 			//关闭弹窗并销毁
 			this.box.parentNode.removeChild(this.box);
 			this.fire('del');
+		},
+		dstr: function (){
+			//销毁
 			tools = null, t = null, me = null,
 			dialog = null, msg = null, loading = null;
 		}
@@ -433,7 +436,7 @@
 			alt.appendChild(mainBox);
 			return alt;
 		};
-		switch(cfg.autoDestroy){  //是否自动销毁
+		switch(cfg.autoDelete){  //是否自动销毁
 			case false:
 			break;
 

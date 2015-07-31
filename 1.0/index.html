@@ -5,49 +5,18 @@
 <link rel="stylesheet" type="text/css" href="assets/css/index.css">
 <link rel="stylesheet" type="text/css" href="dist/alt.css">
 </head>
-<body>
+<body name="bd">
 <div class="g-bd f-cb">
     <div class="g-sd">
 <div class="m-nav" id="nav">
     <h3 class="f-mgb">配置导航：</h3>
-    <ul class="list">
-        <!-- <li><span class="u-tiptop">
-            <a class="target" href="#id">id</a>
-            <i class="info">弹窗id</i>
-        </span></li> -->
-    </ul>
+    <ul class="list"></ul>
 </div>
     </div>
     <div class="g-mn">
         <div class="g-mnc">
 
-<div class="m-intro" id="intro">
-    <ul class="list">
-        <li>
-            <h2 class="hd"><a class="tg" name="id">&</a>id</h2>
-            <div class="cnt">
-                <div class="val">取值：opt.id</div>
-                <div class="mean">释义：生成弹窗的id，方便元素的获取操作</div>
-            </div>
-        </li>
-        <li>
-            <h2 class="hd"><a class="tg" name="id">&</a>id</h2>
-            <div class="cnt">
-                <div class="val">取值：opt.id</div>
-                <div class="mean">释义：生成弹窗的id，方便元素的获取操作</div>
-            </div>
-        </li>
-        <li>
-            <h2 class="hd"><a class="tg" name="id">&</a>id</h2>
-            <div class="cnt">
-                <div class="val">取值：opt.id</div>
-                <div class="mean">释义：生成弹窗的id，方便元素的获取操作</div>
-            </div>
-        </li>
-    </ul>
-</div>
-
-<div class="m-cfg">
+<div class="m-cfg" id="cfg">
 <h3 class="f-mgb">配置项：</h3>
 <pre class="u-code">
 cfg = {  //整合配置项
@@ -89,17 +58,9 @@ cfg = {  //整合配置项
 </pre>
 </div>
 
-<div class="m-access">
-    <input type="button" id="btn" value="弹窗" />
-</div>
-
-        </div>
-    </div>
-</div>
-</body>
-</html>
-<script src="dist/alt.js"></script>
-<script>
+<div class="m-demo" id="demo">
+    <h3 class="f-mgb">示例代码：</h3>
+    <pre class="u-code">
 var myAlt = new alt({
     id: 'my_alt',
     skin: 'alt',
@@ -110,12 +71,76 @@ var myAlt = new alt({
 
     model: 'dialog',
     draggable: true,
-    overlay: true,
+    overlay: false,
     overlayType: 'grey'//'grey|pure'
 });
 
-//myAlt.crt();
-//console.log(myAlt);
+var altBtn = document.getElementById('alt_btn');
+var clsBtn = document.getElementById('cls_btn');
+
+altBtn.onclick = function(){
+    myAlt.crt();
+}
+
+clsBtn.onclick = function(){
+    myAlt.del();
+}
+    </pre>
+    <div class="f-mgt">
+        <input type="button" class="u-btn" id="alt_btn" value="点击弹窗" />
+        <input type="button" class="u-btn" id="cls_btn" value="点击关闭" />
+    </div>
+</div>
+
+<div class="m-intro" id="intro">
+    <ul class="list">
+        <li>
+            <h2 class="hd"><a class="tg" name="id">&</a>id</h2>
+            <div class="cnt">
+                <div class="val">取值：opt.id</div>
+                <div class="mean">释义：生成弹窗的id，方便元素的获取操作</div>
+            </div>
+        </li>
+        <li>
+            <h2 class="hd"><a class="tg" name="id">&</a>id</h2>
+            <div class="cnt">
+                <div class="val">取值：opt.id</div>
+                <div class="mean">释义：生成弹窗的id，方便元素的获取操作</div>
+            </div>
+        </li>
+        <li>
+            <h2 class="hd"><a class="tg" name="id">&</a>id</h2>
+            <div class="cnt">
+                <div class="val">取值：opt.id</div>
+                <div class="mean">释义：生成弹窗的id，方便元素的获取操作</div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="dist/alt.js"></script>
+<script>
+(function(){  //执行示例代码
+    var fnStr = document.getElementById('demo').getElementsByTagName('pre')[0].innerHTML;
+    eval(fnStr);
+})();
+
+(function(){  //配置项展示
+    var cfgStr = alt.toString();
+    var startP = cfgStr.indexOf('/*>>>config<<<*/');
+    var endP = cfgStr.indexOf('/*>>>!config<<<*/');
+    var str = 'cfg = {'+
+    cfgStr.slice(startP+16,endP);
+    str = str.replace(/\t\t\t/g, '    ');
+    str += '\n'+'}';
+    document.getElementById('cfg').getElementsByTagName('pre')[0].innerHTML = str;
+})();
 </script>
 <!-- 用于页面导航 -->
 <script src="assets/js/guide.js"></script>
+<script src="assets/js/back_to_top.js"></script>

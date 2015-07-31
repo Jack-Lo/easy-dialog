@@ -59,7 +59,7 @@ a{
     margin-left:200px;
     background-color: $g-mnc-bgc;
     color: $g-mnc-c;
-    box-shadow: 4px 3px 6px #666;
+    box-shadow: 4px 3px 6px #fff;
 }
 
 /* 通用模块 */
@@ -77,48 +77,6 @@ a{
             margin-left: 15px;
         }
     }
-}
-
-.u-back_to_top{  //返回顶部
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    width: 38px;
-    height: 38px;
-    background-image: url("img/u-back_to_top.png");
-    cursor: pointer;
-    @include opacity(.2);
-    transition: opacity .1s;
-
-    &:hover{
-        @include opacity(1);
-    }
-}
-
-.u-btn{  //按钮默认样式
-    border: 1px solid #ccc;
-    background-image: linear-gradient(to bottom,#fff,#e6e6e6);
-    box-shadow: 1px 1px 1px #666;
-    color: #333;
-    padding: 3px 8px;
-    font-size: 13px;
-    border-radius: 5px;
-    cursor: pointer;
-
-    &:hover{
-        background: #eee;
-    }
-}
-
-.u-code{  //代码块
-    border: 1px solid $bdc;
-    background-color: #fafafa;
-    padding: $m-pd / 2;
-    color: #222;
-    font-size: 12px;
-    line-height: 20px;
-    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
-    border-radius: $m-pd / 2;
 }
 
 .u-tiptop{  //tiptop
@@ -202,5 +160,31 @@ a{
             70%{opacity:1;transform:translateX(-5px);}
             100%{opacity:1;transform:translateX(0);}
         }
+    }
+}
+
+.u-code{  //代码块
+    border: 1px solid $bdc;
+    background-color: #fafafa;
+    padding: $m-pd / 2;
+    color: #222;
+    font-size: 12px;
+    line-height: 20px;
+    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+    border-radius: $m-pd / 2;
+}
+
+.u-btn{
+    border: 1px solid #ccc;
+    background-image: linear-gradient(to bottom,#fff,#e6e6e6);
+    box-shadow: 1px 1px 1px #666;
+    color: #333;
+    padding: 3px 8px;
+    font-size: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover{
+        background: #eee;
     }
 }

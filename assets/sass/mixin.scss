@@ -1,0 +1,13 @@
+/* 函数 */
+@mixin prefix($attr, $val) {
+    $preArr: -webkit-, -moz-, -ms-;
+    @each $pre in $preArr {
+        #{$pre}#{$attr}: $val;
+    }
+    #{$attr}: $val;
+}
+
+@mixin opacity($val) {
+  opacity: $val;
+  filter: alpha(opacity=$val * 100); //IE8
+}
