@@ -118,7 +118,14 @@ a{
     font-size: 12px;
     line-height: 20px;
     font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
-    border-radius: $m-pd / 2;
+    border-radius: $m-pd / 4;
+
+    transition: border-color .2s, background-color .2s;
+
+    &:hover{
+        border-color: #bbb;
+        background-color: #f6f6f6;
+    }
 }
 
 .u-tiptop{  //tiptop
@@ -126,7 +133,7 @@ a{
     .target{
         padding-left: 5px;
         padding-right: 5px;
-        border-radius: 5px;
+        border-radius: 3px;
         transition: background-color .2s;
     }
 

@@ -60,32 +60,7 @@ cfg = {  //整合配置项
 
 <div class="m-demo" id="demo">
     <h3 class="f-mgb">示例代码：</h3>
-    <pre class="u-code">
-var myAlt = new alt({
-    id: 'my_alt',
-    skin: 'alt',
-
-    title: '提示文本',
-    closeBtn: true,
-    content: '正文',
-
-    model: 'dialog',
-    draggable: true,
-    overlay: false,
-    overlayType: 'grey'//'grey|pure'
-});
-
-var altBtn = document.getElementById('alt_btn');
-var clsBtn = document.getElementById('cls_btn');
-
-altBtn.onclick = function(){
-    myAlt.crt();
-}
-
-clsBtn.onclick = function(){
-    myAlt.del();
-}
-    </pre>
+    <pre class="u-code"></pre>
     <div class="f-mgt">
         <input type="button" class="u-btn" id="alt_btn" value="点击弹窗" />
         <input type="button" class="u-btn" id="cls_btn" value="点击关闭" />
@@ -124,23 +99,34 @@ clsBtn.onclick = function(){
 </body>
 </html>
 <script src="dist/alt.js"></script>
-<script>
-(function(){  //执行示例代码
-    var fnStr = document.getElementById('demo').getElementsByTagName('pre')[0].innerHTML;
-    eval(fnStr);
-})();
+<script id="demo_code">
+var myAlt = new alt({
+    id: 'my_alt',
+    skin: 'alt',
 
-(function(){  //配置项展示
-    var cfgStr = alt.toString();
-    var startP = cfgStr.indexOf('/*>>>config<<<*/');
-    var endP = cfgStr.indexOf('/*>>>!config<<<*/');
-    var str = 'cfg = {'+
-    cfgStr.slice(startP+16,endP);
-    str = str.replace(/\t\t\t/g, '    ');
-    str += '\n'+'}';
-    document.getElementById('cfg').getElementsByTagName('pre')[0].innerHTML = str;
-})();
+    title: '提示文本',
+    closeBtn: true,
+    content: '正文',
+
+    model: 'dialog',
+    draggable: true,
+    overlay: false,
+    overlayType: 'grey'//'grey|pure'
+});
+
+var altBtn = document.getElementById('alt_btn');
+var clsBtn = document.getElementById('cls_btn');
+
+altBtn.onclick = function(){
+    myAlt.crt();
+}
+
+clsBtn.onclick = function(){
+    myAlt.del();
+}
 </script>
+<script src="assets/js/index.js"></script>
 <!-- 用于页面导航 -->
 <script src="assets/js/guide.js"></script>
+<!-- 返回顶部 -->
 <script src="assets/js/back_to_top.js"></script>
